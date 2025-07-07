@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato</title>
+    <link rel="stylesheet" href="../css/gato.css">
+</head>
+<body>
+    <header>
+        <h1>Gato</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div class="game-top">
+            <p id="turno">Turno: <span class="turno-x">Jugador X</span></p>
+        </div>
+        
+        <div class="game-middle">
+            <div class="game-board">
+                <div class="row">
+                    <div class="cell" id="0"></div>
+                    <div class="cell" id="1"></div>
+                    <div class="cell" id="2"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="3"></div>
+                    <div class="cell" id="4"></div>
+                    <div class="cell" id="5"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" id="6"></div>
+                    <div class="cell" id="7"></div>
+                    <div class="cell" id="8"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-bottom">
+            <div class="action-buttons">
+                <button id="reiniciar">Reiniciar Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Gato</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Formar una línea de tres símbolos iguales (X u O) en horizontal, vertical o diagonal.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>El juego es para dos jugadores: X y O</li>
+                    <li>Por turnos, cada jugador coloca su símbolo en un espacio vacío del tablero</li>
+                    <li>El jugador X siempre comienza primero</li>
+                    <li>Gana el primer jugador que consiga alinear tres de sus símbolos</li>
+                    <li>Si el tablero se llena sin que nadie gane, el juego termina en empate</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Casillas del tablero:</strong> Haz clic para colocar tu símbolo</li>
+                    <li><strong>Reiniciar Juego:</strong> Comienza un nuevo juego</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Intenta bloquear al oponente si tiene dos en línea</li>
+                    <li>Busca crear oportunidades donde tengas dos formas de ganar</li>
+                    <li>El centro es la posición más estratégica</li>
+                    <li>Las esquinas ofrecen más oportunidades para crear líneas ganadoras</li>
+                </ul>
+                <p><strong>Dificultad:</strong></p>
+                <ul>
+                    <li>Juego de estrategia simple pero con profundidad táctica</li>
+                    <li>Con juego perfecto de ambos jugadores, siempre termina en empate</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de resultado -->
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="result-message" id="result-message"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="result-details"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-result-modal">Jugar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/gato.js"></script>
+
+</body>
+</html>

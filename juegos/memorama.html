@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <link rel="stylesheet" href="../css/memorama.css">
+</head>
+<body>
+    <header>
+        <h1>Memorama</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div id="tablero" class="tablero"></div>
+        
+        <p id="temporizador">Tiempo restante: <span id="time-left">60</span> segundos</p>
+        <p id="mensaje"></p>
+        
+        <div class="action-buttons">
+            <button id="reiniciar">Nuevo Juego</button>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Memorama</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Encontrar todos los pares de cartas antes de que se acabe el tiempo.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>El tablero contiene cartas volteadas con números ocultos</li>
+                    <li>Haz clic en una carta para voltearla y revelar su número</li>
+                    <li>Luego haz clic en otra carta para intentar encontrar su par</li>
+                    <li>Si las dos cartas tienen el mismo número, permanecerán visibles</li>
+                    <li>Si no coinciden, se volverán a voltear</li>
+                    <li>Tienes 60 segundos para encontrar todos los pares</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Cartas:</strong> Haz clic para voltearlas</li>
+                    <li><strong>Reiniciar Juego:</strong> Comienza un nuevo juego</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Trata de memorizar la posición de los números cuando se revelan</li>
+                    <li>Empieza por las esquinas y bordes para establecer puntos de referencia</li>
+                    <li>No te apresures, pero mantén un ojo en el temporizador</li>
+                    <li>Cada juego tiene una disposición aleatoria de cartas</li>
+                </ul>
+                <p><strong>Dificultad:</strong></p>
+                <ul>
+                    <li>El juego contiene 8 pares de cartas (16 cartas en total)</li>
+                    <li>El tiempo límite es de 60 segundos</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de victoria -->
+    <div class="modal" id="victory-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="victory-message">¡Felicidades, has ganado!</h2>
+            </div>
+            <div class="modal-body">
+                <p>¡Encontraste todos los pares antes de que se acabara el tiempo!</p>
+                <p>¿Quieres jugar de nuevo?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-victory-modal">Jugar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de derrota -->
+    <div class="modal" id="defeat-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="defeat-message">¡Se acabó el tiempo!</h2>
+            </div>
+            <div class="modal-body">
+                <p>No lograste encontrar todos los pares a tiempo.</p>
+                <p>¿Quieres intentarlo de nuevo?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-defeat-modal">Intentar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/memorama.js"></script>
+
+</body>
+</html>

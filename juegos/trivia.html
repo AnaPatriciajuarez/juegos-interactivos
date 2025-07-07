@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="../css/trivia.css">
+</head>
+<body>
+    <header>
+        <h1>Trivia</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div id="trivia-container">
+            <p class="loading">Cargando preguntas...</p>
+        </div>
+        
+        <p id="score">Puntuación: 0</p>
+        <p id="respuesta"></p>
+        <p class="question-count" id="question-count">Pregunta 1 de 10</p>
+        
+        <div class="action-buttons">
+            <button id="next-button" style="display:none;">Siguiente Pregunta</button>
+            <button id="jugar-nuevamente">Nuevo Juego</button>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar a la Trivia</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Responder correctamente el mayor número de preguntas posible.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>Se te presentarán preguntas con 4 opciones de respuesta cada una</li>
+                    <li>Selecciona la respuesta que consideres correcta haciendo clic en ella</li>
+                    <li>La respuesta correcta se marcará en verde, las incorrectas en rojo</li>
+                    <li>Obtendrás 1 punto por cada respuesta correcta</li>
+                    <li>Al final del juego verás tu puntuación total</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Botones de respuesta:</strong> Selecciona tu respuesta</li>
+                    <li><strong>Siguiente Pregunta:</strong> Avanza a la siguiente pregunta</li>
+                    <li><strong>Nuevo Juego:</strong> Reinicia el juego con nuevas preguntas</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Lee cuidadosamente cada pregunta antes de responder</li>
+                    <li>Elimina primero las respuestas que claramente son incorrectas</li>
+                    <li>Si no estás seguro, sigue tu intuición</li>
+                    <li>Cada juego tiene preguntas diferentes seleccionadas al azar</li>
+                </ul>
+                <p><strong>Dificultad:</strong></p>
+                <ul>
+                    <li>Las preguntas varían en dificultad desde básicas hasta avanzadas</li>
+                    <li>El juego incluye preguntas sobre cultura general, ciencia, historia y más</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/trivia.js"></script>
+</body>
+</html>

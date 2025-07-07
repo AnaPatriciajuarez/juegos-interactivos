@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="../css/sudoku.css">
+</head>
+<body>
+    <header>
+        <h1>SUDOKU</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="ayuda-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div class="controls">
+            <div class="difficulty-selector">
+                <button id="facil" class="difficulty-btn active">Fácil</button>
+                <button id="medio" class="difficulty-btn">Medio</button>
+                <button id="dificil" class="difficulty-btn">Difícil</button>
+            </div>
+            
+            <div class="game-info">
+                <div class="info-box">
+                    <div class="info-label">Celdas vacías</div>
+                    <div class="info-value" id="celdas-vacias">0</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">Pistas usadas</div>
+                    <div class="info-value" id="pistas-usadas">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tablero"></div>
+        
+        <div class="action-buttons">
+            <button id="nuevo-juego">Nuevo Juego</button>
+            <button id="limpiar">Limpiar</button>
+            <button id="pista">Dame una pista</button>
+        </div>
+        
+        <button id="validar">Validar solución</button>
+        
+        <div id="mensaje"></div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="instrucciones-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Sudoku</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Llenar la cuadrícula con números del 1 al 9 siguiendo las reglas del juego.</p>
+                <p><strong>Reglas:</strong></p>
+                <ul>
+                    <li>Cada fila debe contener todos los números del 1 al 9 sin repetir</li>
+                    <li>Cada columna debe contener todos los números del 1 al 9 sin repetir</li>
+                    <li>Cada cuadro de 3×3 debe contener todos los números del 1 al 9 sin repetir</li>
+                    <li>Los números en <span style="color:#FF4081;font-weight:bold">rosa</span> son pistas fijas que no se pueden cambiar</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Nuevo Juego:</strong> Comienza una nueva partida con la dificultad seleccionada</li>
+                    <li><strong>Fácil/Medio/Difícil:</strong> Cambia la dificultad del juego</li>
+                    <li><strong>Limpiar:</strong> Borra todos los números que has ingresado</li>
+                    <li><strong>Dame una pista:</strong> Revela el número correcto en una celda vacía</li>
+                    <li><strong>Validar solución:</strong> Verifica si tu solución es correcta</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Empieza por buscar números que solo puedan ir en una celda específica</li>
+                    <li>Busca patrones en filas, columnas y cuadros de 3×3</li>
+                    <li>Usa lápiz y papel para tomar notas si es necesario</li>
+                    <li>No adivines - usa la lógica para determinar cada número</li>
+                </ul>
+                <p><strong>Estrategias avanzadas:</strong></p>
+                <ul>
+                    <li><strong>Escaneo:</strong> Busca números que solo puedan ir en una celda específica dentro de una fila, columna o región</li>
+                    <li><strong>Eliminación:</strong> Elimina posibilidades basándote en números ya colocados</li>
+                    <li><strong>Parejas desnudas:</strong> Si dos celdas en una unidad (fila, columna o región) solo pueden contener los mismos dos números, esos números pueden eliminarse de otras celdas en la misma unidad</li>
+                    <li><strong>Parejas ocultas:</strong> Si dos números solo pueden ir en dos celdas específicas dentro de una unidad, todos los demás números pueden eliminarse de esas celdas</li>
+                </ul>
+                <p><strong>Niveles de dificultad:</strong></p>
+                <ul>
+                    <li><strong>Fácil:</strong> Se pueden resolver usando solo técnicas básicas de escaneo</li>
+                    <li><strong>Medio:</strong> Requiere técnicas de eliminación y puede incluir parejas desnudas</li>
+                    <li><strong>Difícil:</strong> Puede requerir técnicas avanzadas como parejas ocultas o cadenas</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/sudoku.js"></script>
+</body>
+</html>

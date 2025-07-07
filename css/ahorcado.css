@@ -1,0 +1,503 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #E0E0E0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6200EA, #FF4081);
+            color: #FFFFFF;
+            width: 100%;
+            max-width: 800px;
+            padding: 15px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: #03DAC5;
+        }
+
+        #game-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(40, 40, 60, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #6200EA;
+        }
+
+        .game-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .game-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-middle {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .game-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #03DAC5;
+            display: block;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px 15px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 2px solid #6200EA;
+            background: rgba(50, 50, 70, 0.7);
+            color: #E0E0E0;
+            width: 250px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .word {
+            font-size: 2rem;
+            letter-spacing: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #FF4081;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        #intentos {
+            font-size: 1.8rem;
+            color: #FFD700;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        #mensaje {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            min-height: 50px;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(50, 50, 70, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .drawing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .drawing {
+            width: 220px;
+            height: 300px;
+            background: rgba(30, 30, 45, 0.7);
+            border-radius: 10px;
+            position: relative;
+            border: 2px solid #6200EA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cuerda {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            width: 5px;
+            height: 80px;
+            background: linear-gradient(to bottom, #6200EA, #FF4081);
+        }
+
+        .cabeza {
+            position: absolute;
+            top: 95px;
+            left: 40px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6200EA, #FF4081);
+            display: none;
+        }
+
+        .cuerpo {
+            position: absolute;
+            top: 130px;
+            left: 55px;
+            width: 5px;
+            height: 40px;
+            background: linear-gradient(to bottom, #6200EA, #FF4081);
+            display: none;
+        }
+
+        .brazos {
+            position: absolute;
+            top: 140px;
+            left: 40px;
+            width: 60px;
+            height: 5px;
+            background: linear-gradient(to right, #6200EA, #FF4081);
+            display: none;
+        }
+
+        .piernas {
+            position: absolute;
+            top: 170px;
+            left: 40px;
+            width: 60px;
+            height: 5px;
+            background: linear-gradient(to right, #6200EA, #FF4081);
+            display: none;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        input {
+            padding: 12px 20px;
+            margin-top: 10px;
+            font-size: 1.3rem;
+            border-radius: 10px;
+            border: 2px solid #6200EA;
+            background: rgba(50, 50, 70, 0.7);
+            color: #E0E0E0;
+            width: 70px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FF4081;
+            box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #6200EA, #FF4081);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
+            background: linear-gradient(135deg, #FF4081, #6200EA);
+        }
+
+        #intentar {
+            background: linear-gradient(135deg, #FF4081, #FF1A6A);
+        }
+
+        #intentar:hover {
+            background: linear-gradient(135deg, #FF1A6A, #FF4081);
+        }
+
+        #reiniciar {
+            background: linear-gradient(135deg, #6200EA, #FF4081);
+        }
+
+        #reiniciar:hover {
+            background: linear-gradient(135deg, #FF4081, #6200EA);
+        }
+
+        /* Modal de instrucciones */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #6200EA;
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-body {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+            overflow-y: auto;
+            padding-right: 10px;
+            flex-grow: 1;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: rgba(30, 30, 40, 0.5);
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #6200EA;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #FF4081;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #FF4081;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 64, 129, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #03DAC5;
+            margin-bottom: 15px;
+        }
+
+        .victory-message, .defeat-message {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF4081, #6200EA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            header h1 {
+                margin-bottom: 15px;
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .word {
+                font-size: 1.5rem;
+                letter-spacing: 8px;
+            }
+            
+            .drawing {
+                width: 180px;
+                height: 250px;
+            }
+            
+            select {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .game-middle {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .word {
+                font-size: 1.2rem;
+                letter-spacing: 5px;
+            }
+            
+            #intentos {
+                font-size: 1.5rem;
+            }
+            
+            .drawing {
+                width: 150px;
+                height: 200px;
+            }
+            
+            .cuerda {
+                left: 40px;
+                height: 60px;
+            }
+            
+            .cabeza {
+                top: 75px;
+                left: 30px;
+            }
+            
+            .cuerpo {
+                top: 110px;
+                left: 45px;
+                height: 30px;
+            }
+            
+            .brazos {
+                top: 120px;
+                left: 30px;
+                width: 50px;
+            }
+            
+            .piernas {
+                top: 140px;
+                left: 30px;
+                width: 50px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitario Spider</title>
+    <link rel="stylesheet" href="../css/solitario.css">
+    <style>
+        /* Estilos adicionales pueden ir aquí */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Solitario Spider</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="solitario-container">
+        <div class="top-panel">
+            <div class="deck-area">
+                <div class="deck" id="stock-pile"></div>
+            </div>
+        </div>
+
+        <div class="tableau" id="tableau">
+            <!-- Las columnas se generarán dinámicamente -->
+        </div>
+
+        <div class="info-panel">
+            <div class="status-box">
+                <div id="game-status">Juego en progreso</div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span>Movimientos:</span>
+                        <span class="stat-value" id="moves-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Puntuación:</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="action-buttons">
+                    <button id="undo-btn" disabled>↩ Deshacer</button>
+                    <button id="hint-btn">💡 Pista</button>
+                </div>
+                <div class="action-buttons">
+                    <button id="new-game-btn">Nuevo Juego</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mensajes -->
+    <div class="modal" id="message-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Título</h2>
+            </div>
+            <div class="modal-body" id="modal-body">
+                Contenido del mensaje...
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="modal-ok-btn">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Solitario Spider</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Formar secuencias completas del Rey al As del mismo palo.</p>
+                <p><strong>Reglas:</strong></p>
+                <ul>
+                    <li>Puedes mover cartas entre columnas si están en secuencia descendente del mismo palo</li>
+                    <li>Solo puedes mover grupos de cartas que estén en secuencia ordenada del mismo palo</li>
+                    <li>Haz clic en el mazo para repartir 10 cartas nuevas (una por columna)</li>
+                    <li>No puedes repartir cartas si hay columnas vacías</li>
+                    <li>Cuando completes una secuencia del K al A del mismo palo, se eliminará automáticamente</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li>Haz clic en una carta para seleccionarla y luego en otra carta o columna vacía para moverla</li>
+                    <li>Usa el botón 'Pista' para obtener ayuda sobre posibles movimientos</li>
+                    <li>Usa el botón 'Deshacer' para revertir tu último movimiento</li>
+                    <li>Usa 'Nuevo Juego' para comenzar una nueva partida</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Intenta descubrir las cartas ocultas lo antes posible</li>
+                    <li>Planifica tus movimientos para crear secuencias completas</li>
+                    <li>Mantén algunas columnas con espacio libre para facilitar los movimientos</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/solitario.js"></script>
+</body>
+</html>

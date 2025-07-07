@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="../css/ahorcado.css">
+</head>
+<body>
+    <header>
+        <h1>Ahorcado</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div class="game-content">
+            <div class="game-top">
+                <label for="categoria">Selecciona una categoría:</label>
+                <select id="categoria">
+                    <option value="paises">Países</option>
+                    <option value="frutas">Frutas</option>
+                    <option value="peliculas">Películas</option>
+                    <option value="animales">Animales</option>
+                    <option value="deportes">Deportes</option>
+                </select>
+                
+                <p id="palabra" class="word"></p>
+                <p>Intentos restantes: <span id="intentos">6</span></p>
+                <p id="mensaje"></p>
+            </div>
+            
+            <div class="game-middle">
+                <div class="drawing-container">
+                    <div id="ahorcado-dibujo" class="drawing">
+                        <div class="cuerda"></div>
+                        <div class="cabeza"></div>
+                        <div class="cuerpo"></div>
+                        <div class="brazos"></div>
+                        <div class="piernas"></div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <input type="text" id="letra" maxlength="1" placeholder="Adivina una letra">
+                    <div class="action-buttons">
+                        <button id="intentar">Intentar</button>
+                        <button id="reiniciar">Reiniciar Juego</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Ahorcado</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Adivinar la palabra oculta antes de que se complete el dibujo del ahorcado.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>Selecciona una categoría para comenzar el juego</li>
+                    <li>Ingresa una letra en el campo de texto</li>
+                    <li>Si la letra está en la palabra, se revelará su posición</li>
+                    <li>Si la letra no está en la palabra, perderás un intento y se dibujará una parte del ahorcado</li>
+                    <li>Tienes 6 intentos para adivinar la palabra</li>
+                    <li>Si adivinas todas las letras antes de agotar los intentos, ¡ganas!</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Campo de texto:</strong> Ingresa una letra para adivinar</li>
+                    <li><strong>Intentar:</strong> Comprueba si la letra está en la palabra</li>
+                    <li><strong>Reiniciar Juego:</strong> Comienza un nuevo juego con una palabra diferente</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Comienza con las vocales (A, E, I, O, U) ya que son las más comunes</li>
+                    <li>Presta atención a las letras que ya has intentado</li>
+                    <li>Observa el patrón de la palabra para deducir posibles letras</li>
+                    <li>Cada categoría tiene palabras relacionadas con su tema</li>
+                </ul>
+                <p><strong>Dificultad:</strong></p>
+                <ul>
+                    <li>Las palabras varían en longitud según la categoría</li>
+                    <li>Tienes 6 intentos antes de perder</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de victoria -->
+    <div class="modal" id="victory-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="victory-message">¡Felicidades, has ganado!</h2>
+            </div>
+            <div class="modal-body">
+                <p>¡Adivinaste la palabra correctamente!</p>
+                <p>¿Quieres jugar de nuevo?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-victory-modal">Jugar de nuevo</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de derrota -->
+    <div class="modal" id="defeat-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="defeat-message">¡Se terminaron los intentos!</h2>
+            </div>
+            <div class="modal-body">
+                <p>La palabra era: <span id="palabra-perdida" style="color: #FF4081; font-weight: bold;"></span></p>
+                <p>¿Quieres intentarlo de nuevo?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="close-defeat-modal">Intentar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/ahorcado.js"></script>
+
+</body>
+</html>

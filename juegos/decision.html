@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué harías si...?</title>
+    <link rel="stylesheet" href="../css/decision.css">
+    <style>
+        /* Estilos adicionales pueden ir aquí */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>¿Qué harías si...?</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <!-- Pantalla de selección de historia -->
+        <div id="story-selection" class="game-screen">
+            <div class="game-top">
+                <h2>Elige tu aventura</h2>
+                <p class="subtitle">Selecciona una historia y toma decisiones que determinarán tu destino</p>
+            </div>
+            
+            <div class="game-middle">
+                <div class="story-card" data-story="1">
+                    <h3>El Bosque Encantado</h3>
+                    <p>Te adentras en un bosque misterioso lleno de secretos antiguos. ¿Podrás encontrar el camino a casa o quedarás atrapado para siempre?</p>
+                    <div class="story-image" style="background: linear-gradient(135deg, #255a1d, #3d2c1d);"></div>
+                </div>
+                
+                <div class="story-card" data-story="2">
+                    <h3>La Misión Espacial</h3>
+                    <p>Como capitán de una nave interestelar, debes tomar decisiones críticas que determinarán el destino de tu tripulación y tu misión.</p>
+                    <div class="story-image" style="background: linear-gradient(135deg, #000b30, #333);"></div>
+                </div>
+                
+                <div class="story-card" data-story="3">
+                    <h3>El Misterio del Castillo</h3>
+                    <p>Una invitación a un castillo ancestral te lleva a un mundo de secretos familiares y peligros ocultos. ¿Podrás resolver el misterio?</p>
+                    <div class="story-image" style="background: linear-gradient(135deg, #222244, #555);"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pantalla de juego -->
+        <div id="game-screen" class="game-screen">
+            <div class="game-top">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="scene-counter" id="scene-counter"></div>
+            </div>
+            
+            <div class="game-middle">
+                <div id="scene-content" class="scene-content">
+                    <!-- El contenido de la escena se cargará aquí -->
+                </div>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Las opciones se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pantalla de final -->
+        <div id="final-screen" class="game-screen final-screen">
+            <div class="game-top">
+                <h2 class="final-title" id="final-title"></h2>
+            </div>
+            
+            <div class="game-middle">
+                <div class="final-description">
+                    <p id="final-description"></p>
+                    <div class="final-explanation">
+                        <p id="final-explanation"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-bottom">
+                <div class="action-buttons">
+                    <button class="btn-restart" id="restart-btn">Jugar Otra Historia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Juego de Decisiones</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Tomar decisiones que determinen el resultado de la historia que elijas.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>Selecciona una de las historias disponibles</li>
+                    <li>Lee cuidadosamente cada situación presentada</li>
+                    <li>Elige entre las opciones disponibles</li>
+                    <li>Cada decisión afectará el desarrollo de la historia</li>
+                    <li>Al final, descubrirás las consecuencias de tus elecciones</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Tarjetas de historia:</strong> Selecciona la aventura que quieres vivir</li>
+                    <li><strong>Botones de opción:</strong> Elige tu siguiente acción</li>
+                    <li><strong>Reiniciar:</strong> Comienza una nueva historia</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Piensa en las posibles consecuencias antes de elegir</li>
+                    <li>No hay respuestas correctas o incorrectas, solo diferentes resultados</li>
+                    <li>Puedes jugar varias veces para descubrir todos los finales</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/decision.js"></script>
+</body>
+</html>

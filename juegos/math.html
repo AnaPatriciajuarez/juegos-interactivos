@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Matemáticas</title>
+    <link rel="stylesheet" href="../css/math.css">
+</head>
+<body>
+    <header>
+        <h1>Juego de Matemáticas</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div id="math-container">
+            <p class="loading">Cargando operaciones...</p>
+        </div>
+        
+        <p id="math-score">Puntuación: 0</p>
+        <p id="result-message"></p>
+        <p class="question-count" id="question-count">Pregunta 1 de 5</p>
+        
+        <div class="action-buttons">
+            <button id="next-math-button">Siguiente Pregunta</button>
+            <button id="jugar-nuevamente">Nuevo Juego</button>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Juego de Matemáticas</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Resolver correctamente el mayor número de operaciones matemáticas posible.</p>
+                <p><strong>Instrucciones:</strong></p>
+                <ul>
+                    <li>Se te presentarán operaciones matemáticas aleatorias (sumas, restas, multiplicaciones y divisiones)</li>
+                    <li>Ingresa tu respuesta en el campo numérico</li>
+                    <li>Presiona el botón "Validar" o presiona Enter para comprobar tu respuesta</li>
+                    <li>La respuesta correcta se mostrará en verde, las incorrectas en rojo</li>
+                    <li>Obtendrás 1 punto por cada respuesta correcta</li>
+                    <li>Al final del juego verás tu puntuación total</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Campo de respuesta:</strong> Ingresa tu respuesta numérica</li>
+                    <li><strong>Validar:</strong> Comprueba tu respuesta</li>
+                    <li><strong>Siguiente Pregunta:</strong> Avanza a la siguiente operación</li>
+                    <li><strong>Nuevo Juego:</strong> Reinicia el juego con nuevas operaciones</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Tómate tu tiempo para calcular cada operación</li>
+                    <li>Para divisiones, asegúrate de que el resultado es un número entero</li>
+                    <li>En restas, el resultado nunca será negativo</li>
+                    <li>Puedes usar papel y lápiz si lo necesitas</li>
+                </ul>
+                <p><strong>Dificultad:</strong></p>
+                <ul>
+                    <li>Las operaciones varían en dificultad desde básicas hasta intermedias</li>
+                    <li>Los números usados van desde 1 hasta 20</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/math.js"></script>
+</body>
+</html>

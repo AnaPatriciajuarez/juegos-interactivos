@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="../css/2048.css">
+    <style>
+        /* Estilos adicionales pueden ir aquí */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2048</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div class="score-panel">
+            <div class="score-box">
+                <div class="score-title">Puntuación</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            <div class="score-box">
+                <div class="score-title">Mejor</div>
+                <div class="score-value" id="best-score">0</div>
+            </div>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <!-- Las celdas se generarán dinámicamente -->
+        </div>
+
+        <div class="controls">
+            <div class="action-buttons">
+                <button id="undo-btn">↩ Deshacer</button>
+            </div>
+            <div class="action-buttons">
+                <button id="new-game-btn">Nuevo Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mensajes -->
+    <div class="modal" id="message-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">¡Felicidades!</h2>
+            </div>
+            <div class="modal-body" id="modal-body">
+                ¡Has alcanzado el 2048!
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="modal-ok-btn">Continuar</button>
+                <button class="btn-modal" id="modal-new-game-btn">Nuevo Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar a 2048</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Combina fichas iguales para alcanzar el 2048.</p>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li>Usa las teclas de flecha o desliza en móvil para mover las fichas</li>
+                    <li>Las fichas con el mismo número se combinan cuando chocan</li>
+                    <li>Cada combinación suma puntos a tu puntuación</li>
+                    <li>El juego termina cuando no hay movimientos posibles</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Intenta mantener tu número más grande en una esquina</li>
+                    <li>Planifica tus movimientos con anticipación</li>
+                    <li>No llenes el tablero demasiado rápido</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/2048.js"></script>
+</body>
+</html>

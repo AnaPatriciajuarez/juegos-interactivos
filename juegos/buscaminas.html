@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="../css/buscaminas.css">
+</head>
+<body>
+    <header>
+        <h1>Buscaminas</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="help-btn">Instrucciones</a></li>
+                <li><a href="../index.html" id="volver-inicio">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="game-container">
+        <div class="controls">
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="beginner">Principiante</button>
+                <button class="difficulty-btn" data-difficulty="intermediate">Intermedio</button>
+                <button class="difficulty-btn" data-difficulty="expert">Experto</button>
+            </div>
+            <div class="game-info">
+                <div class="info-box">
+                    <div class="info-label">Minas</div>
+                    <div class="info-value" id="mines-count">10</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">Bandera</div>
+                    <div class="info-value" id="flags-count">10</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-board" id="game-board">
+            <!-- El tablero se generará dinámicamente -->
+        </div>
+
+        <div class="action-buttons">
+            <button id="new-game-btn">Nuevo Juego</button>
+            <button id="undo-btn">↩ Deshacer</button>
+        </div>
+    </div>
+
+    <!-- Modal para mensajes -->
+    <div class="modal" id="message-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">¡Juego Terminado!</h2>
+            </div>
+            <div class="modal-body" id="modal-body">
+                Has encontrado una mina. ¡Inténtalo de nuevo!
+            </div>
+            <div class="modal-footer">
+                <button id="modal-ok-btn">Aceptar</button>
+                <button id="modal-new-game-btn">Nuevo Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de instrucciones -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Cómo Jugar al Buscaminas</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Objetivo:</strong> Revelar todas las casillas que no contienen minas.</p>
+                <p><strong>Reglas:</strong></p>
+                <ul>
+                    <li>Cada número indica cuántas minas hay en las casillas adyacentes</li>
+                    <li>Usa esta información para deducir dónde están las minas</li>
+                    <li>Si revelas una mina, pierdes el juego</li>
+                    <li>Las banderas (🚩) marcan donde crees que hay minas</li>
+                </ul>
+                <p><strong>Controles:</strong></p>
+                <ul>
+                    <li><strong>Clic izquierdo:</strong> Revelar una casilla</li>
+                    <li><strong>Clic derecho:</strong> Colocar/quitar una bandera</li>
+                    <li><strong>Nuevo Juego:</strong> Comienza una nueva partida con la dificultad seleccionada</li>
+                    <li><strong>Deshacer:</strong> Revierte tu último movimiento</li>
+                    <li><strong>Principiante/Intermedio/Experto:</strong> Cambia la dificultad del juego</li>
+                </ul>
+                <p><strong>Consejos:</strong></p>
+                <ul>
+                    <li>Empieza por las esquinas y bordes</li>
+                    <li>Si un número coincide con las banderas a su alrededor, las otras casillas son seguras</li>
+                    <li>No adivines - usa la lógica para determinar dónde están las minas</li>
+                    <li>Usa el botón 'Deshacer' si cometes un error</li>
+                </ul>
+                <p><strong>Dificultades:</strong></p>
+                <ul>
+                    <li><strong>Principiante:</strong> 9x9 tablero con 10 minas</li>
+                    <li><strong>Intermedio:</strong> 16x16 tablero con 40 minas</li>
+                    <li><strong>Experto:</strong> 16x30 tablero con 99 minas</li>
+                </ul>
+                <p><strong>Estrategias avanzadas:</strong></p>
+                <ul>
+                    <li><strong>Patrones de números:</strong> Aprende a reconocer patrones comunes de números</li>
+                    <li><strong>Lógica deductiva:</strong> Usa la información de múltiples números para deducir posiciones seguras</li>
+                    <li><strong>Conteo de minas:</strong> Lleva un conteo mental de cuántas minas has marcado y cuántas faltan</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button id="help-modal-ok-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/buscaminas.js"></script>
+
+</body>
+</html>
+
+

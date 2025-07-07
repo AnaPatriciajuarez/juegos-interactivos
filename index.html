@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Clásicos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6200EA, #FF4081);
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --accent-color: #03DAC5;
+            --text-light: #E0E0E0;
+            --text-dark: #212121;
+        }
+        
+        body {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px; /* Para el navbar fijo */
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            background: var(--primary-gradient);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-link {
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            margin-left: 10px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--accent-color) !important;
+        }
+        
+        .game-card {
+            background: rgba(40, 40, 60, 0.8);
+            border-radius: 15px;
+            border: 2px solid #6200EA;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(255, 64, 129, 0.4);
+        }
+        
+        .game-card .img-container {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #000; /* Fondo negro para imágenes con transparencia */
+            padding: 10px; /* Espacio alrededor de la imagen */
+        }
+        
+        .game-card .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-card .card-title {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .game-card .btn-play {
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .game-card .btn-play:hover {
+            background: linear-gradient(135deg, #FF4081, #6200EA);
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-weight: bold;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary-gradient);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        footer {
+            background: rgba(30, 30, 40, 0.8);
+            border-top: 2px solid #6200EA;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="index.html">
+                <i class="fas fa-gamepad me-2"></i>Juegos Clásicos
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacion.html"><i class="fas fa-info-circle me-2"></i>Más Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html"><i class="fas fa-envelope me-2"></i>Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <h1 class="section-title">Nuestra Colección de Juegos</h1>
+        
+        <div class="row g-4">
+            <!-- Juego 1: Buscaminas -->
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/sudoku.png" class="card-img-top" alt="Sudoku">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sudoku</h5><br><br>
+                        <a href="juegos/sudoku.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/trivia.png" class="card-img-top" alt="Trivia">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Trivia</h5><br><br>
+                        <a href="juegos/trivia.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/math.png" class="card-img-top" alt="Matemáticas">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Matemáticas</h5><br><br>
+                        <a href="juegos/math.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/memorama.png" class="card-img-top" alt="Memorama">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Memorama</h5><br><br>
+                        <a href="juegos/memorama.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/ahorcado.png" class="card-img-top" alt="Ahorcado">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ahorcado</h5><br><br>
+                        <a href="juegos/ahorcado.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/gato.png" class="card-img-top" alt="Gato">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gato</h5><br><br>
+                        <a href="juegos/gato.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/decision.png" class="card-img-top" alt="¿Qué harías si...?">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">¿Qué harías si...?</h5><br><br>
+                        <a href="juegos/decision.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/solitario.png" class="card-img-top" alt="Solitario Spider">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Solitario Spider</h5><br><br>
+                        <a href="juegos/solitario.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/2048.png" class="card-img-top" alt="2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">2048</h5><br><br>
+                        <a href="juegos/2048.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="game-card">
+                    <div class="img-container">
+                        <img src="assets/buscaminas.png" class="card-img-top" alt="Buscaminas">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Buscaminas</h5><br><br>
+                        <a href="juegos/buscaminas.html" class="btn btn-play"><i class="fas fa-play me-2"></i>Jugar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sobre Nosotros</h5>
+                    <p>Creando juegos clásicos con un toque moderno para tu diversión.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Enlaces Rápidos</h5>
+                    <a href="informacion.html" class="text-white me-3">Más Información</a>
+                    <a href="contacto.html" class="text-white">Contacto</a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p>&copy; 2025 Juegos Clásicos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
